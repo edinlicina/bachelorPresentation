@@ -1,0 +1,3182 @@
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+  --auth-bg: #080b10;
+  --auth-surface: #0e131b;
+  --auth-text: #f3f6fa;
+  --auth-muted: #8996a8;
+  --auth-accent: #38bdf8;
+  --auth-border: #222c39;
+}
+
+/* =========================================================
+   GLOBAL SLIDE STYLING
+   ========================================================= */
+
+.slidev-layout {
+  background:
+    radial-gradient(
+      circle at 78% 15%,
+      rgba(56, 189, 248, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    var(--auth-bg) !important;
+
+  background-size:
+    auto,
+    40px 40px,
+    40px 40px,
+    auto !important;
+
+  color: var(--auth-text) !important;
+}
+
+.slidev-page {
+  background-color: var(--auth-bg) !important;
+}
+
+/* =========================================================
+   FOLIE 1 — TITLE
+   ========================================================= */
+
+.title-slide {
+  position: relative;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  text-align: left;
+
+  padding-left: 3rem;
+
+  color: var(--auth-text);
+}
+
+.title-slide::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -100px;
+  top: -150px;
+
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.16) 0%,
+    rgba(56, 189, 248, 0.06) 35%,
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+
+  color: var(--auth-accent);
+
+  font-weight: 600;
+
+  margin-bottom: 1.4rem;
+}
+
+.title-slide h1 {
+  font-size: 3.8rem !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.055em !important;
+
+  font-weight: 700 !important;
+
+  margin: 0 !important;
+
+  color: var(--auth-text) !important;
+}
+
+.title-accent {
+  width: 90px;
+  height: 4px;
+
+  background: var(--auth-accent);
+
+  margin: 1.6rem 0;
+
+  box-shadow:
+    0 0 8px rgba(56, 189, 248, 0.8),
+    0 0 25px rgba(56, 189, 248, 0.35);
+}
+
+.subtitle {
+  max-width: 650px;
+
+  color: var(--auth-muted) !important;
+
+  font-size: 1.15rem;
+  line-height: 1.55;
+
+  margin: 0;
+}
+
+.auth-methods {
+  display: flex;
+
+  gap: 0.7rem;
+
+  margin-top: 2rem;
+
+  font-family: monospace;
+  font-size: 0.7rem;
+
+  letter-spacing: 0.13em;
+
+  color: var(--auth-accent);
+}
+
+.auth-methods .separator {
+  color: #3c4655;
+}
+
+.author {
+  position: absolute;
+
+  bottom: 2.2rem;
+  left: 3rem;
+
+  color: var(--auth-muted);
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+   GENERAL CONTENT SLIDES
+   ========================================================= */
+
+.content-slide {
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 2.3rem 2.7rem;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  text-align: left;
+}
+
+.slide-kicker {
+  font-family: monospace;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.18em;
+
+  color: var(--auth-accent);
+
+  margin-bottom: 0.8rem;
+}
+
+.content-slide h1 {
+  font-size: 2.7rem !important;
+
+  line-height: 1 !important;
+
+  letter-spacing: -0.045em !important;
+
+  font-weight: 700 !important;
+
+  color: var(--auth-text) !important;
+
+  margin: 0 !important;
+}
+
+.slide-lead {
+  color: var(--auth-muted) !important;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+
+  margin-top: 1rem !important;
+}
+
+.accent {
+  color: var(--auth-accent) !important;
+}
+
+/* =========================================================
+   FOLIE 2 — MOTIVATION
+   ========================================================= */
+
+.evolution-row {
+  width: 100%;
+
+  display: flex !important;
+  flex-direction: row !important;
+
+  align-items: center !important;
+  justify-content: flex-start;
+
+  gap: 0.8rem;
+
+  margin-top: 2.2rem;
+}
+
+.concept-card {
+  box-sizing: border-box;
+
+  position: relative;
+
+  flex: 0 0 190px;
+
+  width: 190px;
+  height: 125px;
+
+  padding: 1rem;
+
+  background: rgba(14, 19, 27, 0.88);
+
+  border: 1px solid var(--auth-border);
+
+  border-radius: 10px;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-index {
+  position: absolute;
+
+  top: 0.65rem;
+  right: 0.75rem;
+
+  font-family: monospace;
+
+  font-size: 0.5rem;
+
+  color: #465365;
+}
+
+.card-icon {
+  font-family: monospace;
+
+  color: var(--auth-accent);
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.08em;
+
+  margin-bottom: 0.8rem;
+}
+
+.concept-card h3 {
+  color: var(--auth-text) !important;
+
+  font-size: 0.82rem !important;
+
+  font-weight: 600;
+
+  margin: 0 !important;
+}
+
+.concept-card p {
+  color: var(--auth-muted) !important;
+
+  font-size: 0.58rem;
+
+  line-height: 1.45;
+
+  margin-top: 0.4rem !important;
+}
+
+.connector {
+  flex: 0 0 30px;
+
+  display: flex !important;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #536174;
+
+  font-family: monospace;
+
+  font-size: 1.2rem;
+}
+
+.danger-card {
+  border-color: rgba(56, 189, 248, 0.55);
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.08),
+      transparent 60%
+    ),
+    rgba(14, 19, 27, 0.88);
+
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.05);
+}
+
+.takeaway {
+  margin-top: 1.4rem;
+
+  padding: 0.35rem 0 0.35rem 0.8rem;
+
+  border-left: 2px solid var(--auth-accent);
+
+  color: var(--auth-muted);
+
+  font-size: 0.62rem;
+
+  line-height: 1.5;
+}
+
+.takeaway strong {
+  color: var(--auth-text);
+
+  font-weight: 500;
+
+  margin-left: 0.2rem;
+}
+
+/* =========================================================
+   FOLIE 3 — PARADIGMENWECHSEL
+   ========================================================= */
+
+.paradigm {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    45px
+    minmax(0, 1fr)
+    45px
+    minmax(0, 1.15fr);
+
+  align-items: center;
+
+  gap: 0.25rem;
+
+  margin-top: 2rem;
+}
+
+.paradigm-stage {
+  box-sizing: border-box;
+
+  min-height: 150px;
+
+  padding: 0.8rem;
+}
+
+.stage-label {
+  font-family: monospace;
+
+  color: #4d5a6c;
+
+  font-size: 0.48rem;
+
+  letter-spacing: 0.1em;
+
+  margin-bottom: 0.8rem;
+}
+
+.stage-visual {
+  display: inline-block;
+
+  font-family: monospace;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.08em;
+
+  color: #a7b2c2;
+
+  border: 1px solid #293544;
+
+  border-radius: 6px;
+
+  padding: 0.5rem 0.65rem;
+
+  margin-bottom: 0.9rem;
+
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.paradigm-stage h3 {
+  color: var(--auth-text) !important;
+
+  font-size: 0.78rem !important;
+
+  font-weight: 600;
+
+  margin: 0 !important;
+}
+
+.paradigm-stage p {
+  max-width: 175px;
+
+  color: var(--auth-muted) !important;
+
+  font-size: 0.54rem;
+
+  line-height: 1.5;
+
+  margin-top: 0.4rem !important;
+}
+
+.paradigm-arrow {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  color: #465466;
+
+  font-size: 1.2rem;
+}
+
+.paradigm-break {
+  color: var(--auth-accent);
+
+  text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+}
+
+.public-stage {
+  border: 1px solid rgba(56, 189, 248, 0.38);
+
+  border-radius: 10px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.08),
+      transparent 55%
+    ),
+    rgba(14, 19, 27, 0.65);
+}
+
+.keypair {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.35rem;
+
+  margin-bottom: 0.9rem;
+}
+
+.keypair span {
+  font-family: monospace;
+
+  font-size: 0.48rem;
+}
+
+.private-key {
+  padding: 0.45rem 0.55rem;
+
+  border-radius: 5px;
+
+  color: var(--auth-accent);
+
+  background: rgba(56, 189, 248, 0.1);
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.public-key {
+  padding: 0.45rem 0.55rem;
+
+  border-radius: 5px;
+
+  color: #a0acbc;
+
+  border: 1px solid #303c4c;
+}
+
+.key-separator {
+  color: #536174;
+}
+
+.paradigm-takeaway {
+  display: grid;
+
+  grid-template-columns: 1fr 1px 1fr;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  width: 470px;
+
+  margin-left: auto;
+  margin-top: 1rem;
+
+  padding: 0.7rem 0.9rem;
+
+  border: 1px solid #202a37;
+
+  border-radius: 7px;
+
+  background: rgba(14, 19, 27, 0.45);
+
+  color: var(--auth-muted);
+
+  font-size: 0.5rem;
+}
+
+.paradigm-takeaway > div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.15rem;
+}
+
+.paradigm-takeaway strong {
+  color: var(--auth-text);
+
+  font-size: 0.58rem;
+
+  font-weight: 500;
+}
+
+.mini-label {
+  color: var(--auth-accent);
+
+  font-family: monospace;
+
+  font-size: 0.4rem;
+
+  letter-spacing: 0.12em;
+}
+
+.takeaway-divider {
+  width: 1px;
+
+  height: 38px;
+
+  background: #293544;
+}
+
+/* =========================================================
+   FOLIE 4 — SCOPE / STRATEGIES
+   ========================================================= */
+
+.strategy-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 0.9rem;
+
+  width: 100%;
+
+  margin-top: 1.8rem;
+}
+
+.strategy {
+  box-sizing: border-box;
+
+  position: relative;
+
+  min-height: 175px;
+
+  padding: 0.9rem;
+
+  background: rgba(14, 19, 27, 0.78);
+
+  border: 1px solid var(--auth-border);
+
+  border-radius: 10px;
+}
+
+.strategy-public {
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.05),
+      transparent 55%
+    ),
+    rgba(14, 19, 27, 0.78);
+}
+
+.strategy-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-family: monospace;
+
+  font-size: 0.43rem;
+
+  letter-spacing: 0.08em;
+}
+
+.strategy-id {
+  color: #4b5869;
+}
+
+.strategy-type {
+  color: #929dad;
+}
+
+.strategy-type.public {
+  color: var(--auth-accent) !important;
+}
+
+.strategy-symbol {
+  margin: 1.25rem 0 0.8rem;
+
+  font-family: monospace;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--auth-accent);
+}
+
+.strategy h3 {
+  color: var(--auth-text) !important;
+
+  font-size: 0.78rem !important;
+
+  font-weight: 600;
+
+  margin: 0 !important;
+}
+
+.strategy p {
+  max-width: 180px;
+
+  color: var(--auth-muted) !important;
+
+  font-size: 0.52rem;
+
+  line-height: 1.45;
+
+  margin-top: 0.4rem !important;
+}
+
+.strategy-bottom {
+  position: absolute;
+
+  left: 0.9rem;
+  bottom: 0.75rem;
+
+  font-family: monospace;
+
+  font-size: 0.4rem;
+
+  letter-spacing: 0.1em;
+
+  color: #485669;
+}
+
+.scope-footer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  margin-top: 1.15rem;
+
+  font-family: monospace;
+
+  font-size: 0.43rem;
+
+  letter-spacing: 0.05em;
+
+  color: #657489;
+}
+
+.scope-arrow {
+  color: #3f4d60;
+}
+
+.scope-footer strong {
+  color: var(--auth-accent);
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOLIE 5 — BEDROHUNGSMODELL
+   ========================================================= */
+
+.threat-layout {
+  display: grid;
+
+  grid-template-columns: 1.25fr 0.75fr;
+
+  gap: 2rem;
+
+  width: 100%;
+
+  margin-top: 1.6rem;
+
+  align-items: center;
+}
+
+.threat-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.threat {
+  display: grid;
+
+  grid-template-columns: 42px 1fr;
+
+  align-items: start;
+
+  padding: 0.42rem 0;
+
+  border-bottom: 1px solid #1d2632;
+}
+
+.threat:last-child {
+  border-bottom: none;
+}
+
+.threat-code {
+  padding-top: 0.08rem;
+
+  font-family: monospace;
+
+  font-size: 0.46rem;
+
+  letter-spacing: 0.06em;
+
+  color: var(--auth-accent);
+}
+
+.threat strong {
+  display: block;
+
+  color: var(--auth-text);
+
+  font-size: 0.63rem;
+
+  font-weight: 500;
+}
+
+.threat p {
+  margin: 0.12rem 0 0 !important;
+
+  color: var(--auth-muted) !important;
+
+  font-size: 0.47rem;
+
+  line-height: 1.4;
+}
+
+.security-definition {
+  padding: 1.2rem;
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+
+  border-radius: 10px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.1),
+      transparent 55%
+    ),
+    rgba(14, 19, 27, 0.65);
+}
+
+.definition-label {
+  margin-bottom: 1.2rem;
+
+  color: var(--auth-accent);
+
+  font-family: monospace;
+
+  font-size: 0.42rem;
+
+  letter-spacing: 0.15em;
+}
+
+.definition-main {
+  color: #687689;
+
+  font-size: 0.5rem;
+}
+
+.definition-main span {
+  display: block;
+
+  margin-top: 0.25rem;
+
+  color: #8996a8;
+
+  font-size: 0.75rem;
+
+  text-decoration: line-through;
+
+  text-decoration-thickness: 1px;
+}
+
+.definition-main.positive {
+  color: var(--auth-accent);
+}
+
+.definition-main.positive span {
+  color: var(--auth-text);
+
+  text-decoration: none;
+}
+
+.definition-divider {
+  height: 1px;
+
+  margin: 0.9rem 0;
+
+  background: #283442;
+}
+
+.definition-footnote {
+  margin-top: 1.2rem;
+
+  padding-top: 0.65rem;
+
+  border-top: 1px solid #202a36;
+
+  color: #566478;
+
+  font-family: monospace;
+
+  font-size: 0.4rem;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   FOLIE 6 — TOTP
+   ========================================================= */
+
+.totp-flow {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 0.85fr 0.8fr 1fr;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.totp-node {
+  padding: 0.9rem;
+  border: 1px solid #273241;
+  border-radius: 9px;
+  background: rgba(14, 19, 27, 0.72);
+}
+
+.node-label {
+  font-family: monospace;
+  font-size: 0.4rem;
+  letter-spacing: 0.12em;
+  color: #526075;
+}
+
+.node-title {
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--auth-text);
+}
+
+.node-secret {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.35rem 0.45rem;
+  font-family: monospace;
+  font-size: 0.45rem;
+  color: var(--auth-accent);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 4px;
+}
+
+.server-node {
+  border-color: rgba(56, 189, 248, 0.28);
+}
+
+.totp-operation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #637187;
+}
+
+.operation-arrow {
+  font-size: 1rem;
+}
+
+.operation-box {
+  color: var(--auth-accent);
+}
+
+.totp-code {
+  text-align: center;
+  padding: 0.9rem 0.4rem;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  border-radius: 9px;
+  background: rgba(56, 189, 248, 0.04);
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.05);
+}
+
+.code-label {
+  font-family: monospace;
+  font-size: 0.4rem;
+  letter-spacing: 0.15em;
+  color: #607087;
+}
+
+.code-value {
+  margin-top: 0.3rem;
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: var(--auth-text);
+}
+
+.code-life {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: var(--auth-muted);
+}
+
+.code-life span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--auth-accent);
+  box-shadow: 0 0 8px var(--auth-accent);
+}
+
+.formula-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.3rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #202a37;
+  border-radius: 7px;
+  font-family: monospace;
+  font-size: 0.43rem;
+  color: #8290a3;
+}
+
+.formula-name {
+  color: var(--auth-accent);
+}
+
+.formula-divider {
+  width: 1px;
+  height: 18px;
+  background: #2b3746;
+}
+
+.technical-takeaway {
+  margin-top: 0.8rem;
+  font-size: 0.5rem;
+  color: var(--auth-muted);
+}
+
+.technical-takeaway > span {
+  margin-right: 0.5rem;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: var(--auth-accent);
+}
+
+.technical-takeaway strong {
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOLIE 7 — PHISHING
+   ========================================================= */
+
+.attack-flow {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr 0.8fr 1fr;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.attack-actor {
+  min-height: 120px;
+  padding: 0.8rem;
+  border: 1px solid #273241;
+  border-radius: 9px;
+  background: rgba(14, 19, 27, 0.72);
+}
+
+.actor-symbol {
+  display: inline-block;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid #344254;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #9aa7b8;
+}
+
+.attack-actor strong {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--auth-text);
+  font-size: 0.65rem;
+}
+
+.attack-actor > span {
+  display: block;
+  margin-top: 0.25rem;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #66758a;
+}
+
+.attacker-actor {
+  border-color: rgba(248, 113, 113, 0.35);
+  background: rgba(248, 113, 113, 0.025);
+}
+
+.danger-symbol {
+  color: #f87171;
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.attack-channel {
+  text-align: center;
+}
+
+.channel-data {
+  font-family: monospace;
+  font-size: 0.38rem;
+  color: #8795a8;
+}
+
+.channel-data span {
+  color: #f87171;
+}
+
+.channel-arrow {
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.danger-line {
+  color: #f87171;
+}
+
+.attack-result,
+.blocked-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #283442;
+  border-radius: 7px;
+  background: rgba(14, 19, 27, 0.5);
+}
+
+.result-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-family: monospace;
+  font-size: 0.38rem;
+  letter-spacing: 0.12em;
+  color: #59687b;
+}
+
+.attack-result strong,
+.blocked-result strong {
+  color: var(--auth-text);
+  font-size: 0.55rem;
+  font-weight: 500;
+}
+
+.result-status {
+  font-family: monospace;
+  font-size: 0.45rem;
+  color: #9aa8b8;
+}
+
+.result-status span {
+  margin-left: 0.4rem;
+  color: #f87171;
+}
+
+.attack-insight {
+  margin-top: 0.8rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid #f87171;
+  font-size: 0.5rem;
+  color: var(--auth-muted);
+}
+
+.attack-insight span {
+  color: #f87171;
+}
+
+.attack-insight strong {
+  color: var(--auth-text);
+  font-family: monospace;
+}
+
+/* =========================================================
+   FOLIE 8 — WEBAUTHN ARCHITECTURE
+   ========================================================= */
+
+.webauthn-architecture {
+  display: grid;
+  grid-template-columns: 1fr 0.55fr 1fr 0.55fr 1fr;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+
+.wa-party {
+  min-height: 135px;
+  padding: 0.85rem;
+  border: 1px solid #273241;
+  border-radius: 9px;
+  background: rgba(14, 19, 27, 0.72);
+}
+
+.wa-number {
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #4c5a6d;
+}
+
+.wa-icon {
+  display: inline-block;
+  margin-top: 0.7rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid #334052;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.43rem;
+  color: #9aa8b8;
+}
+
+.key-icon {
+  color: var(--auth-accent);
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.wa-party h3 {
+  margin: 0.65rem 0 0 !important;
+  font-size: 0.68rem !important;
+  color: var(--auth-text) !important;
+}
+
+.wa-party p {
+  margin-top: 0.25rem !important;
+  font-size: 0.45rem;
+  color: var(--auth-muted) !important;
+}
+
+.authenticator-party {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.035);
+}
+
+.wa-link {
+  text-align: center;
+  font-family: monospace;
+  color: #526075;
+}
+
+.wa-link span {
+  font-size: 0.32rem;
+}
+
+.wa-link div {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  color: var(--auth-accent);
+}
+
+.key-separation {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.key-location {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid #222d3a;
+  border-radius: 7px;
+}
+
+.location-label {
+  display: block;
+  font-family: monospace;
+  font-size: 0.36rem;
+  color: #566579;
+}
+
+.key-location strong {
+  display: block;
+  margin-top: 0.2rem;
+  color: var(--auth-text);
+  font-size: 0.58rem;
+}
+
+.key-location small {
+  color: var(--auth-muted);
+  font-size: 0.4rem;
+}
+
+.private-location {
+  border-color: rgba(56, 189, 248, 0.35);
+}
+
+.private-location strong {
+  color: var(--auth-accent);
+}
+
+.key-separation-line {
+  text-align: center;
+  color: var(--auth-accent);
+}
+
+/* =========================================================
+   FOLIE 9 — REGISTRATION CEREMONY
+   ========================================================= */
+
+.ceremony {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 1rem;
+  margin-top: 1.6rem;
+  min-height: 220px;
+}
+
+.ceremony-column {
+  padding: 0.7rem;
+  border: 1px solid #222d3a;
+  border-radius: 8px;
+  background: rgba(14, 19, 27, 0.55);
+}
+
+.ceremony-head {
+  font-family: monospace;
+  font-size: 0.42rem;
+  letter-spacing: 0.13em;
+  color: var(--auth-accent);
+  margin-bottom: 0.8rem;
+}
+
+.ceremony-event {
+  margin-bottom: 0.8rem;
+  font-size: 0.5rem;
+  color: var(--auth-muted);
+}
+
+.event-number {
+  margin-right: 0.3rem;
+  font-family: monospace;
+  color: var(--auth-accent);
+}
+
+.ceremony-code {
+  padding: 0.4rem;
+  border: 1px solid #293544;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #a4afbe;
+}
+
+.ceremony-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.1rem;
+  padding-top: 1.7rem;
+}
+
+.ceremony-message {
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #69788c;
+}
+
+.message-right {
+  text-align: right;
+}
+
+.message-left {
+  text-align: left;
+}
+
+.accent-message {
+  color: var(--auth-accent);
+}
+
+.authenticator-popout {
+  position: absolute;
+  width: 250px;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  padding: 0.7rem;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 8px;
+  background: #0c1118;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.auth-pop-label {
+  font-family: monospace;
+  font-size: 0.36rem;
+  letter-spacing: 0.13em;
+  color: var(--auth-accent);
+}
+
+.auth-pop-main {
+  margin-top: 0.4rem;
+  font-size: 0.52rem;
+  color: var(--auth-text);
+}
+
+.auth-pop-main span {
+  margin-right: 0.3rem;
+  font-family: monospace;
+  color: var(--auth-accent);
+}
+
+.generated-keys {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.generated-keys > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.key-tag {
+  font-family: monospace;
+  font-size: 0.35rem;
+}
+
+.private-tag {
+  color: var(--auth-accent);
+}
+
+.public-tag {
+  color: #a1adbd;
+}
+
+.generated-keys strong {
+  font-size: 0.4rem;
+  color: var(--auth-muted);
+  font-weight: 400;
+}
+
+.ceremony-summary {
+  margin-top: 1rem;
+  font-size: 0.48rem;
+  color: var(--auth-muted);
+}
+
+.ceremony-summary span {
+  margin-right: 0.5rem;
+  font-family: monospace;
+  font-size: 0.36rem;
+  color: var(--auth-accent);
+}
+
+.ceremony-summary strong {
+  color: var(--auth-text);
+}
+
+/* =========================================================
+   FOLIE 10 — AUTHENTICATION
+   ========================================================= */
+
+.auth-sequence {
+  display: flex;
+  align-items: stretch;
+  margin-top: 1.8rem;
+}
+
+.sequence-step {
+  flex: 1;
+  min-height: 135px;
+  padding: 0.7rem;
+  border: 1px solid #222d3a;
+  border-radius: 8px;
+  background: rgba(14, 19, 27, 0.6);
+}
+
+.highlighted-step {
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(56, 189, 248, 0.035);
+}
+
+.sequence-number {
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: var(--auth-accent);
+}
+
+.sequence-entity {
+  margin-top: 0.55rem;
+  font-family: monospace;
+  font-size: 0.38rem;
+  letter-spacing: 0.1em;
+  color: #647388;
+}
+
+.sequence-content strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.55rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.sequence-content code {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.36rem;
+  color: #8795a8;
+}
+
+.sequence-line {
+  width: 28px;
+  position: relative;
+}
+
+.sequence-line::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--auth-accent);
+}
+
+.verification-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.verify-item {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #25303e;
+  border-radius: 5px;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #8391a4;
+}
+
+.verify-item span {
+  margin-right: 0.25rem;
+  color: var(--auth-accent);
+}
+
+/* =========================================================
+   FOLIE 11 — VERIFIER BINDING
+   ========================================================= */
+
+.comparison-attack {
+  display: grid;
+  grid-template-columns: 0.8fr 40px 1.15fr 0.8fr 1.15fr;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.8rem;
+}
+
+.comparison-user,
+.comparison-phish,
+.comparison-server {
+  padding: 0.8rem;
+  border: 1px solid #273241;
+  border-radius: 8px;
+  background: rgba(14, 19, 27, 0.65);
+}
+
+.comparison-icon {
+  display: inline-block;
+  padding: 0.3rem;
+  border: 1px solid #344153;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.38rem;
+  color: #98a5b5;
+}
+
+.comparison-user strong,
+.comparison-phish strong,
+.comparison-server strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--auth-text);
+  font-size: 0.55rem;
+}
+
+.comparison-arrow {
+  text-align: center;
+  color: #f87171;
+}
+
+.comparison-phish {
+  border-color: rgba(248, 113, 113, 0.35);
+}
+
+.comparison-domain {
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #f87171;
+}
+
+.legit-domain {
+  color: var(--auth-accent);
+}
+
+.rp-mismatch {
+  margin-top: 0.7rem;
+  font-family: monospace;
+  font-size: 0.34rem;
+  color: #f87171;
+}
+
+.blocked-path {
+  display: flex;
+  align-items: center;
+}
+
+.blocked-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(248, 113, 113, 0.4);
+}
+
+.blocked-symbol {
+  margin: 0 0.3rem;
+  color: #f87171;
+  font-size: 1.2rem;
+}
+
+.binding-explanation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.binding-credential,
+.binding-rp {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+.binding-credential span,
+.binding-rp span {
+  display: block;
+  font-size: 0.32rem;
+  color: #617087;
+}
+
+.binding-credential strong,
+.binding-rp strong {
+  font-size: 0.48rem;
+  color: var(--auth-accent);
+}
+
+.binding-arrow {
+  color: var(--auth-accent);
+}
+
+.blocked-result {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.blocked-status {
+  font-family: monospace;
+  font-size: 0.42rem;
+  color: var(--auth-accent);
+}
+
+.blocked-status span {
+  margin-left: 0.3rem;
+}
+
+.final-security-message {
+  margin-top: 0.7rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--auth-accent);
+  font-size: 0.48rem;
+  color: var(--auth-muted);
+}
+
+.final-security-message strong {
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOLIE 12 — PASSKEYS
+   ========================================================= */
+
+.passkey-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1.7rem;
+}
+
+.passkey-device {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  margin: 0 auto;
+  padding: 0.35rem;
+  border: 1px solid #344153;
+  border-radius: 15px;
+  background: #0c1118;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.device-header {
+  padding: 0.25rem;
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.3rem;
+  letter-spacing: 0.15em;
+  color: #526075;
+}
+
+.device-screen {
+  min-height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(56, 189, 248, 0.08),
+      transparent 65%
+    ),
+    #090d13;
+}
+
+.passkey-prompt {
+  text-align: center;
+}
+
+.prompt-label {
+  display: block;
+  font-family: monospace;
+  font-size: 0.32rem;
+  letter-spacing: 0.12em;
+  color: var(--auth-accent);
+}
+
+.passkey-prompt strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.55rem;
+  color: var(--auth-text);
+}
+
+.biometric-symbol {
+  margin: 0.7rem auto 0.35rem;
+  font-size: 1.5rem;
+  color: var(--auth-accent);
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+}
+
+.prompt-action {
+  font-size: 0.38rem;
+  color: var(--auth-muted);
+}
+
+.passkey-properties {
+  display: flex;
+  flex-direction: column;
+}
+
+.passkey-property {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #1f2935;
+}
+
+.passkey-property:last-child {
+  border-bottom: none;
+}
+
+.property-number {
+  font-family: monospace;
+  font-size: 0.43rem;
+  color: var(--auth-accent);
+}
+
+.passkey-property strong {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.passkey-property p {
+  max-width: 360px;
+  margin: 0.18rem 0 0 !important;
+  font-size: 0.46rem;
+  line-height: 1.45;
+  color: var(--auth-muted) !important;
+}
+
+.passkey-model {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  padding: 0.55rem;
+  border: 1px solid #222d3a;
+  border-radius: 7px;
+  font-size: 0.45rem;
+  color: var(--auth-muted);
+}
+
+.model-label {
+  margin-right: 0.4rem;
+  font-family: monospace;
+  font-size: 0.34rem;
+  color: #526075;
+}
+
+.passkey-model strong {
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.model-arrow {
+  color: #526075;
+}
+
+.passkey-model .model-result {
+  color: var(--auth-accent);
+}
+
+/* =========================================================
+   FOLIE 13 — SECURITY KEY
+   ========================================================= */
+
+.security-key-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1.8rem;
+}
+
+.hardware-key {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.usb-connector {
+  width: 55px;
+  height: 48px;
+  position: relative;
+  border: 1px solid #536174;
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  background: #151c25;
+}
+
+.usb-connector span {
+  position: absolute;
+  width: 8px;
+  height: 4px;
+  top: 12px;
+  background: #59677a;
+}
+
+.usb-connector span:first-child {
+  left: 11px;
+}
+
+.usb-connector span:last-child {
+  right: 11px;
+}
+
+.key-body {
+  position: relative;
+  width: 145px;
+  height: 72px;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  border-radius: 0 15px 15px 0;
+  background:
+    radial-gradient(
+      circle at 70% 50%,
+      rgba(56, 189, 248, 0.08),
+      transparent 45%
+    ),
+    #0d131b;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.key-led {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  top: 10px;
+  right: 12px;
+  border-radius: 50%;
+  background: var(--auth-accent);
+  box-shadow: 0 0 10px var(--auth-accent);
+}
+
+.key-touch {
+  position: absolute;
+  top: 50%;
+  left: 35px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--auth-accent);
+}
+
+.key-brand {
+  position: absolute;
+  right: 13px;
+  bottom: 9px;
+  font-family: monospace;
+  font-size: 0.32rem;
+  letter-spacing: 0.12em;
+  color: #647388;
+}
+
+.hardware-properties {
+  display: flex;
+  flex-direction: column;
+}
+
+.hardware-property {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid #1f2935;
+}
+
+.hardware-property:last-child {
+  border-bottom: none;
+}
+
+.hardware-property-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hardware-property-top span {
+  font-family: monospace;
+  font-size: 0.42rem;
+  color: var(--auth-accent);
+}
+
+.hardware-property-top strong {
+  font-size: 0.62rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.hardware-property p {
+  margin: 0.2rem 0 0 1.65rem !important;
+  font-size: 0.46rem;
+  color: var(--auth-muted) !important;
+}
+
+.passkey-vs-key {
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.65rem;
+  border: 1px solid #222d3a;
+  border-radius: 7px;
+}
+
+.passkey-vs-key > div:not(.versus-divider) {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.passkey-vs-key span {
+  font-family: monospace;
+  font-size: 0.34rem;
+  color: var(--auth-accent);
+}
+
+.passkey-vs-key strong {
+  margin-top: 0.2rem;
+  font-size: 0.45rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.versus-divider {
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #566579;
+}
+
+/* =========================================================
+   FOLIE 14 — TRADE-OFFS
+   ========================================================= */
+
+.tradeoff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.tradeoff-column {
+  overflow: hidden;
+  border: 1px solid #222d3a;
+  border-radius: 9px;
+  background: rgba(14, 19, 27, 0.62);
+}
+
+.featured-tradeoff {
+  border-color: rgba(56, 189, 248, 0.4);
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.06), transparent 50%),
+    rgba(14, 19, 27, 0.62);
+}
+
+.tradeoff-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  border-bottom: 1px solid #25303e;
+}
+
+.tradeoff-header span {
+  font-family: monospace;
+  font-size: 0.38rem;
+  color: var(--auth-accent);
+}
+
+.tradeoff-header strong {
+  font-size: 0.58rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.totp-header span {
+  color: #9aa7b8;
+}
+
+.tradeoff-row {
+  padding: 0.48rem 0.65rem;
+  border-bottom: 1px solid #1c2530;
+}
+
+.tradeoff-row:last-child {
+  border-bottom: none;
+}
+
+.tradeoff-row span {
+  display: block;
+  font-family: monospace;
+  font-size: 0.3rem;
+  letter-spacing: 0.08em;
+  color: #526075;
+}
+
+.tradeoff-row strong {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.43rem;
+  color: #9ba7b7;
+  font-weight: 400;
+}
+
+.tradeoff-row .tradeoff-good {
+  color: var(--auth-accent);
+}
+
+.tradeoff-row .tradeoff-warning {
+  color: #f87171;
+}
+
+.tradeoff-question {
+  margin-top: 1rem;
+  padding: 0.65rem 0.8rem;
+  border-left: 2px solid var(--auth-accent);
+  background: rgba(56, 189, 248, 0.025);
+}
+
+.tradeoff-question span {
+  display: block;
+  font-family: monospace;
+  font-size: 0.33rem;
+  letter-spacing: 0.12em;
+  color: var(--auth-accent);
+}
+
+.tradeoff-question strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.55rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOLIE 15 — RESEARCH LANDSCAPE
+   ========================================================= */
+
+.research-landscape {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.research-source {
+  min-height: 125px;
+  padding: 0.75rem;
+  border: 1px solid #222d3a;
+  border-radius: 8px;
+  background: rgba(14, 19, 27, 0.6);
+}
+
+.source-top {
+  display: flex;
+  justify-content: space-between;
+  font-family: monospace;
+  font-size: 0.32rem;
+  letter-spacing: 0.08em;
+}
+
+.source-number {
+  color: #4d5a6c;
+}
+
+.source-type {
+  color: var(--auth-accent);
+}
+
+.source-name {
+  margin-top: 0.8rem;
+  font-family: monospace;
+  font-size: 0.4rem;
+  color: #637287;
+}
+
+.research-source strong {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.62rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.research-source p {
+  margin-top: 0.3rem !important;
+  font-size: 0.43rem;
+  line-height: 1.4;
+  color: var(--auth-muted) !important;
+}
+
+.known-vs-open {
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+  align-items: stretch;
+  margin-top: 0.9rem;
+}
+
+.known-side,
+.open-side {
+  padding: 0.7rem;
+  border: 1px solid #222d3a;
+  border-radius: 7px;
+}
+
+.open-side {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(56, 189, 248, 0.025);
+}
+
+.knowledge-label {
+  font-family: monospace;
+  font-size: 0.31rem;
+  letter-spacing: 0.12em;
+  color: #58667a;
+}
+
+.accent-label {
+  color: var(--auth-accent);
+}
+
+.known-side strong,
+.open-side strong {
+  display: block;
+  margin-top: 0.3rem;
+  max-width: 300px;
+  font-size: 0.48rem;
+  line-height: 1.4;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.knowledge-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.knowledge-items span {
+  padding: 0.2rem 0.35rem;
+  border: 1px solid #2a3544;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.3rem;
+  color: #718095;
+}
+
+.open-side .knowledge-items span {
+  border-color: rgba(56, 189, 248, 0.22);
+  color: #8ca3b8;
+}
+
+.research-gap-symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  font-size: 1rem;
+  color: var(--auth-accent);
+}
+
+.transition-question {
+  margin-top: 0.65rem;
+  text-align: right;
+  font-size: 0.42rem;
+  color: var(--auth-muted);
+}
+
+.transition-question strong {
+  margin-left: 0.15rem;
+  color: var(--auth-accent);
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOLIE 16 — RESEARCH QUESTION
+   ========================================================= */
+
+.question-slide {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 3rem 4rem;
+
+  text-align: left;
+}
+
+.question-kicker {
+  margin-bottom: 1.3rem;
+
+  font-family: monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+
+  color: var(--auth-accent);
+}
+
+.question-prefix {
+  margin-bottom: 0.4rem;
+
+  font-size: 0.65rem;
+
+  color: var(--auth-muted);
+}
+
+.question-slide h1 {
+  max-width: 760px;
+
+  margin: 0 !important;
+
+  font-size: 2.25rem !important;
+  line-height: 1.08 !important;
+
+  letter-spacing: -0.04em !important;
+
+  color: var(--auth-text) !important;
+}
+
+.question-slide h1 span {
+  color: var(--auth-accent);
+}
+
+.question-suffix {
+  max-width: 690px;
+
+  margin-top: 1rem;
+
+  font-size: 0.62rem;
+  line-height: 1.5;
+
+  color: var(--auth-muted);
+}
+
+.question-suffix strong {
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.question-focus {
+  display: flex;
+
+  gap: 0.45rem;
+
+  margin-top: 1.4rem;
+}
+
+.question-focus > div {
+  padding: 0.4rem 0.55rem;
+
+  border: 1px solid #273241;
+  border-radius: 5px;
+
+  font-family: monospace;
+
+  font-size: 0.36rem;
+  letter-spacing: 0.06em;
+
+  color: #8290a3;
+}
+
+.question-focus span {
+  margin-right: 0.3rem;
+
+  color: var(--auth-accent);
+}
+
+/* =========================================================
+   FOLIE 17 — CRITERIA
+   ========================================================= */
+
+.criteria-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 0.65rem;
+
+  margin-top: 1.6rem;
+}
+
+.criterion-card {
+  position: relative;
+
+  min-height: 180px;
+
+  padding: 0.75rem;
+
+  border: 1px solid #222d3a;
+  border-radius: 8px;
+
+  background: rgba(14, 19, 27, 0.62);
+}
+
+.criterion-number {
+  position: absolute;
+
+  top: 0.6rem;
+  right: 0.65rem;
+
+  font-family: monospace;
+
+  font-size: 0.35rem;
+
+  color: #4e5b6d;
+}
+
+.criterion-icon {
+  display: inline-block;
+
+  padding: 0.28rem 0.38rem;
+
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 4px;
+
+  font-family: monospace;
+
+  font-size: 0.36rem;
+
+  color: var(--auth-accent);
+}
+
+.criterion-card h3 {
+  margin: 0.7rem 0 0.6rem !important;
+
+  font-size: 0.63rem !important;
+
+  color: var(--auth-text) !important;
+}
+
+.criterion-items {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.32rem;
+}
+
+.criterion-items span {
+  padding-bottom: 0.28rem;
+
+  border-bottom: 1px solid #1c2530;
+
+  font-size: 0.4rem;
+
+  color: #7f8da0;
+}
+
+.criteria-rule {
+  margin-top: 0.8rem;
+
+  padding: 0.55rem 0.7rem;
+
+  border-left: 2px solid var(--auth-accent);
+
+  background: rgba(56, 189, 248, 0.025);
+}
+
+.criteria-rule span {
+  display: block;
+
+  font-family: monospace;
+
+  font-size: 0.31rem;
+
+  color: var(--auth-accent);
+}
+
+.criteria-rule strong {
+  display: block;
+
+  margin-top: 0.15rem;
+
+  font-size: 0.45rem;
+
+  color: var(--auth-text);
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOLIE 18 — METHOD
+   ========================================================= */
+
+.method-pipeline {
+  display: grid;
+
+  grid-template-columns:
+    1fr 25px
+    1fr 25px
+    1fr 25px
+    1fr 25px
+    1fr;
+
+  align-items: center;
+
+  margin-top: 1.7rem;
+}
+
+.method-stage {
+  box-sizing: border-box;
+
+  min-height: 155px;
+
+  padding: 0.65rem;
+
+  border: 1px solid #222d3a;
+  border-radius: 8px;
+
+  background: rgba(14, 19, 27, 0.58);
+}
+
+.featured-method {
+  border-color: rgba(56, 189, 248, 0.4);
+
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.06), transparent 55%),
+    rgba(14, 19, 27, 0.58);
+}
+
+.method-number {
+  font-family: monospace;
+
+  font-size: 0.33rem;
+
+  color: #4e5c6f;
+}
+
+.method-symbol {
+  display: inline-block;
+
+  margin-top: 0.55rem;
+
+  padding: 0.25rem 0.32rem;
+
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 4px;
+
+  font-family: monospace;
+
+  font-size: 0.32rem;
+
+  color: var(--auth-accent);
+}
+
+.method-stage h3 {
+  margin: 0.55rem 0 0 !important;
+
+  font-size: 0.52rem !important;
+
+  color: var(--auth-text) !important;
+}
+
+.method-stage p {
+  margin-top: 0.3rem !important;
+
+  font-size: 0.36rem;
+
+  line-height: 1.4;
+
+  color: var(--auth-muted) !important;
+}
+
+.method-connector {
+  text-align: center;
+
+  font-size: 0.7rem;
+
+  color: var(--auth-accent);
+}
+
+.reproducibility {
+  display: flex;
+
+  align-items: center;
+
+  margin-top: 1rem;
+
+  padding: 0.55rem 0.7rem;
+
+  border: 1px solid #222d3a;
+  border-radius: 7px;
+}
+
+.repro-label {
+  padding-right: 0.7rem;
+
+  font-family: monospace;
+
+  font-size: 0.32rem;
+  letter-spacing: 0.1em;
+
+  color: var(--auth-accent);
+}
+
+.repro-items {
+  display: flex;
+
+  flex: 1;
+
+  justify-content: space-between;
+
+  border-left: 1px solid #293544;
+
+  padding-left: 0.7rem;
+}
+
+.repro-items span {
+  font-size: 0.36rem;
+
+  color: #8492a5;
+}
+
+/* =========================================================
+   FOLIE 19 — PROTOTYPE
+   ========================================================= */
+
+.prototype-architecture {
+  display: grid;
+
+  grid-template-columns:
+    1fr 0.45fr
+    1.2fr 0.45fr
+    1fr;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  margin-top: 1.6rem;
+}
+
+.architecture-label {
+  margin-bottom: 0.35rem;
+
+  font-family: monospace;
+
+  font-size: 0.32rem;
+  letter-spacing: 0.12em;
+
+  color: #536176;
+}
+
+.architecture-box {
+  min-height: 105px;
+
+  padding: 0.7rem;
+
+  border: 1px solid #26313f;
+  border-radius: 8px;
+
+  background: rgba(14, 19, 27, 0.65);
+}
+
+.spring-box {
+  border-color: rgba(56, 189, 248, 0.4);
+
+  background: rgba(56, 189, 248, 0.03);
+}
+
+.tech-label {
+  font-family: monospace;
+
+  font-size: 0.33rem;
+
+  color: var(--auth-accent);
+}
+
+.architecture-box strong {
+  display: block;
+
+  margin-top: 0.55rem;
+
+  font-size: 0.57rem;
+
+  color: var(--auth-text);
+
+  font-weight: 500;
+}
+
+.architecture-box small {
+  display: block;
+
+  margin-top: 0.3rem;
+
+  font-size: 0.36rem;
+  line-height: 1.4;
+
+  color: var(--auth-muted);
+}
+
+.architecture-link {
+  padding-top: 0.6rem;
+
+  text-align: center;
+}
+
+.api-label {
+  font-family: monospace;
+
+  font-size: 0.28rem;
+
+  color: #566579;
+}
+
+.api-line {
+  margin-top: 0.25rem;
+
+  color: var(--auth-accent);
+}
+
+.auth-branches {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 0.65rem;
+
+  margin-top: 0.9rem;
+}
+
+.auth-branch {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.55rem;
+
+  padding: 0.5rem 0.6rem;
+
+  border: 1px solid #222d3a;
+  border-radius: 6px;
+}
+
+.branch-id {
+  font-family: monospace;
+
+  font-size: 0.45rem;
+
+  color: var(--auth-accent);
+}
+
+.auth-branch strong {
+  display: block;
+
+  font-size: 0.46rem;
+
+  color: var(--auth-text);
+
+  font-weight: 500;
+}
+
+.auth-branch small {
+  display: block;
+
+  margin-top: 0.1rem;
+
+  font-size: 0.32rem;
+
+  color: #66758a;
+}
+
+.prototype-principle {
+  margin-top: 0.7rem;
+
+  font-size: 0.39rem;
+
+  color: var(--auth-muted);
+}
+
+.prototype-principle span {
+  margin-right: 0.5rem;
+
+  font-family: monospace;
+
+  font-size: 0.3rem;
+
+  color: var(--auth-accent);
+}
+
+.prototype-principle strong {
+  color: var(--auth-text);
+
+  font-weight: 500;
+}
+
+/* =========================================================
+   FOLIE 20 — EXPERIMENT
+   ========================================================= */
+
+.experiment-layout {
+  display: grid;
+
+  grid-template-columns: 1.5fr 0.6fr;
+
+  gap: 1.2rem;
+
+  margin-top: 1.4rem;
+}
+
+.scenario-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.scenario {
+  display: grid;
+
+  grid-template-columns: 45px 1fr 85px;
+
+  align-items: center;
+
+  min-height: 48px;
+
+  border-bottom: 1px solid #1d2632;
+}
+
+.scenario-id {
+  font-family: monospace;
+
+  font-size: 0.38rem;
+
+  color: var(--auth-accent);
+}
+
+.scenario strong {
+  display: block;
+
+  font-size: 0.48rem;
+
+  color: var(--auth-text);
+
+  font-weight: 500;
+}
+
+.scenario p {
+  margin: 0.1rem 0 0 !important;
+
+  font-size: 0.34rem;
+
+  color: var(--auth-muted) !important;
+}
+
+.scenario-measure {
+  text-align: right;
+
+  font-family: monospace;
+
+  font-size: 0.3rem;
+
+  color: #647388;
+}
+
+.measurement-panel {
+  padding: 0.8rem;
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 8px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(56, 189, 248, 0.08),
+      transparent 55%
+    ),
+    rgba(14, 19, 27, 0.62);
+}
+
+.measurement-label {
+  font-family: monospace;
+
+  font-size: 0.31rem;
+  letter-spacing: 0.12em;
+
+  color: var(--auth-accent);
+}
+
+.measurement-main {
+  margin: 0.35rem 0 0.7rem;
+
+  font-size: 0.58rem;
+
+  color: var(--auth-text);
+}
+
+.measurement-item {
+  padding: 0.35rem 0;
+
+  border-bottom: 1px solid #202a36;
+
+  font-size: 0.38rem;
+
+  color: #8492a5;
+}
+
+.measurement-item span {
+  margin-right: 0.4rem;
+
+  font-family: monospace;
+
+  color: var(--auth-accent);
+}
+
+.measurement-divider {
+  height: 1px;
+
+  margin: 0.6rem 0;
+
+  background: #293544;
+}
+
+.measurement-note {
+  font-family: monospace;
+
+  font-size: 0.32rem;
+  line-height: 1.5;
+
+  color: #637287;
+}
+
+/* =========================================================
+   FOLIE 21 — CONTRIBUTION
+   ========================================================= */
+
+.contribution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+}
+
+.contribution-card {
+  min-height: 160px;
+  padding: 0.8rem;
+  border: 1px solid #222d3a;
+  border-radius: 8px;
+  background: rgba(14, 19, 27, 0.62);
+}
+
+.contribution-id {
+  font-family: monospace;
+  font-size: 0.31rem;
+  letter-spacing: 0.1em;
+  color: #566579;
+}
+
+.contribution-symbol {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.3rem 0.4rem;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.34rem;
+  color: var(--auth-accent);
+}
+
+.contribution-card h3 {
+  margin: 0.65rem 0 0 !important;
+  font-size: 0.6rem !important;
+  color: var(--auth-text) !important;
+}
+
+.contribution-card p {
+  margin-top: 0.3rem !important;
+  font-size: 0.42rem;
+  line-height: 1.45;
+  color: var(--auth-muted) !important;
+}
+
+.contribution-result {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  padding: 0.6rem 0.75rem;
+  border-left: 2px solid var(--auth-accent);
+  font-size: 0.4rem;
+  color: var(--auth-muted);
+}
+
+.contribution-result > span {
+  font-family: monospace;
+  font-size: 0.3rem;
+  color: var(--auth-accent);
+}
+
+.contribution-result strong {
+  font-weight: 500;
+  color: #8b98a9;
+}
+
+.contribution-result .accent-result {
+  color: var(--auth-text);
+}
+
+.result-arrow {
+  color: var(--auth-accent);
+}
+
+/* =========================================================
+   FOLIE 22 — SCOPE
+   ========================================================= */
+
+.scope-plan-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-top: 1.7rem;
+}
+
+.scope-boundary {
+  padding: 0.8rem;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 8px;
+  background: rgba(56, 189, 248, 0.025);
+}
+
+.out-boundary {
+  border-color: #273241;
+  background: rgba(14, 19, 27, 0.55);
+}
+
+.boundary-label {
+  margin-bottom: 0.6rem;
+  font-family: monospace;
+  font-size: 0.32rem;
+  letter-spacing: 0.12em;
+  color: var(--auth-accent);
+}
+
+.out-boundary .boundary-label {
+  color: #647388;
+}
+
+.boundary-item {
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #1e2834;
+  font-size: 0.4rem;
+  color: #8c99aa;
+}
+
+.boundary-item:last-child {
+  border-bottom: none;
+}
+
+.boundary-item span {
+  display: inline-block;
+  width: 22px;
+  font-family: monospace;
+  color: var(--auth-accent);
+}
+
+.out-boundary .boundary-item span {
+  color: #5f6e82;
+}
+
+.work-roadmap {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.roadmap-step {
+  flex: 1;
+  text-align: center;
+}
+
+.roadmap-step span {
+  display: block;
+  font-family: monospace;
+  font-size: 0.3rem;
+  color: var(--auth-accent);
+}
+
+.roadmap-step strong {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.45rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.roadmap-step small {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.3rem;
+  color: var(--auth-muted);
+}
+
+.roadmap-line {
+  width: 25px;
+  height: 1px;
+  background: #344153;
+}
+
+/* =========================================================
+   FOLIE 23 — CLOSING
+   ========================================================= */
+
+.closing-slide {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.closing-kicker {
+  margin-bottom: 1.2rem;
+  font-family: monospace;
+  font-size: 0.42rem;
+  letter-spacing: 0.17em;
+  color: var(--auth-accent);
+}
+
+.closing-slide h1 {
+  margin: 0 !important;
+  max-width: 700px;
+  font-size: 2.7rem !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.05em !important;
+  color: var(--auth-text) !important;
+}
+
+.closing-accent {
+  width: 75px;
+  height: 3px;
+  margin: 1.2rem 0;
+  background: var(--auth-accent);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.55);
+}
+
+.closing-slide p {
+  max-width: 650px;
+  margin: 0 !important;
+  font-size: 0.62rem;
+  line-height: 1.55;
+  color: var(--auth-muted) !important;
+}
+
+.closing-slide p strong {
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.closing-methods {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  font-family: monospace;
+  font-size: 0.36rem;
+  letter-spacing: 0.1em;
+  color: #647388;
+}
+
+.closing-methods span:nth-child(odd) {
+  color: var(--auth-accent);
+}
+
+.closing-question {
+  position: absolute;
+  right: 3rem;
+  bottom: 2.4rem;
+  font-size: 0.75rem;
+  color: var(--auth-text);
+}
+
+/* =========================================================
+   FOLIE 24 — LITERATURE
+   ========================================================= */
+
+.literature-slide {
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+.literature-slide h1 {
+  font-size: 2rem !important;
+}
+
+.literature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem 1.2rem;
+  margin-top: 1.1rem;
+}
+
+.literature-entry {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid #1d2632;
+}
+
+.literature-entry > span {
+  font-family: monospace;
+  font-size: 0.32rem;
+  color: var(--auth-accent);
+}
+
+.literature-entry strong {
+  display: block;
+  font-size: 0.45rem;
+  color: var(--auth-text);
+  font-weight: 500;
+}
+
+.literature-entry p {
+  margin: 0.12rem 0 0 !important;
+  font-size: 0.34rem;
+  line-height: 1.4;
+  color: var(--auth-muted) !important;
+}
+
+.literature-note {
+  margin-top: 0.7rem;
+  font-family: monospace;
+  font-size: 0.3rem;
+  color: #536176;
+}
